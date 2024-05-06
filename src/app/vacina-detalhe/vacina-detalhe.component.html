@@ -1,0 +1,58 @@
+<div class="container">
+  <form>
+      <div class="card">
+          <div class="card-header">
+              <h3>{{vacina.id ? 'Edição de' : 'Nova'}} Cadastrar Vacina</h3>
+          </div>
+          <div class="card-body">
+              <div class="row g-3">
+                  <div class="form-group col-md-6">
+                      <label for="nome">Nome:</label>
+                      <input type="text" class="form-control" placeholder="Nome Vacina" aria-label="Nome Vacina" name="nome"
+                             [(ngModel)]="vacina.nome" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <label for="pais">País de Origem:</label>
+                      <input type="text" class="form-control" placeholder="País de Origem da Vacina" aria-label="País de Origem da Vacina" name="pais"
+                             [(ngModel)]="vacina.paisOrigem" required>
+                  </div>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="pesquisador" class="form-label">Pesquisador:</label>
+                  <input type="text" class="form-control" placeholder="Nome Pesquisador" aria-label="Nome Pesquisador" name="pesquisadorResponsavel" [(ngModel)]="vacina.pesquisadorResponsavel">
+                </div>
+                <div class="col-md-3">
+                  <label for="estagio" class="form-label">Estágio Vacina:</label>
+                  <select class="form-select" aria-label="Estágio Vacina" name="estagio" [(ngModel)]="vacina.estagio">
+                    <option value="1">Um</option>
+                    <option value="2">Dois</option>
+                    <option value="3">Três</option>
+                    <option value="4">Quatro</option>
+                    <option value="5">Cinco</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label for="dataInicioPesquisa" class="form-label">Data de Início da Pesquisa:</label>
+                  <input type="date" class="form-control" name="dataInicioPesquisa" [(ngModel)]="vacina.dataInicioPesquisa">
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="form-group col-md-6">
+                      <button type="button" class="btn btn-outline-warning" (click)="voltar()">
+                          <i class="bi bi-arrow-left"></i> Voltar
+                      </button>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <button type="button" class="btn btn-outline-primary" (click)="salvar()">
+                          <i class="bi bi-check"></i> Salvar
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </form>
+</div>
+
